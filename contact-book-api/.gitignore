@@ -1,0 +1,4 @@
+# Node Backend Git Ignore
+node_modules/
+.env
+
