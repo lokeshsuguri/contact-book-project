@@ -9,25 +9,25 @@ function App() {
   const [editingContact, setEditingContact] = useState(null);
 
   const fetchContacts = async () => {
-    const res = await axios.get('http://localhost:5000/api/contacts');
+    const res = await axios.get('http://localhost:5004/api/contacts');
     setContacts(res.data);
   };
 
   useEffect(() => { fetchContacts(); }, []);
 
   const addContact = async (contact) => {
-    await axios.post('http://localhost:5000/api/contacts', contact);
+    await axios.post('http://localhost:5004/api/contacts', contact);
     fetchContacts();
   };
 
   const updateContact = async (id, updatedContact) => {
-    await axios.put(`http://localhost:5000/api/contacts/${id}`, updatedContact);
+    await axios.put(`http://localhost:5004/api/contacts/${id}`, updatedContact);
     fetchContacts();
     setEditingContact(null);
   };
 
   const deleteContact = async (id) => {
-    await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+    await axios.delete(`http://localhost:5004/api/contacts/${id}`);
     fetchContacts();
   };
 
